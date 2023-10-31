@@ -1,5 +1,5 @@
 {
-  "name": "ucad-examples-23",
+  "name": "nodejsperusteet",
   "version": "1.0.0",
   "description": "Node.js REST API examples",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "mattpe",
+  "author": "eemiko",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.52.0",
