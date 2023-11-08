@@ -1,0 +1,73 @@
+### GET /
+GET http://localhost:3000
+
+// media
+
+### GET /media
+GET http://localhost:3000/api/media
+
+### GET /media/:id
+GET http://localhost:3000/api/media/9590
+
+### POST /media
+POST http://localhost:3000/api/media
+content-type: application/json
+
+{
+  "filename": "60ac.jpg",
+  "title": "New image",
+  "description": "The description of the new image",
+  "user_id": 305,
+  "media_type": "image/jpeg",
+}
+
+### POST /media error
+POST http://localhost:3000/api/media
+
+{"jotain": "jotain"}
+
+### DELETE /media/:id
+DELETE http://localhost:3000/api/media/9590
+
+### PUT /media/:id
+PUT http://localhost:3000/api/media/9590
+content-type: application/json
+
+{
+  "title": "Basement modified",
+  "description": "Some new description",
+}
+
+// user
+
+### GET /user
+GET http://localhost:3000/api/user
+
+### GET /user/:id
+GET http://localhost:3000/api/user/260
+
+### POST /user
+POST http://localhost:3000/api/user
+content-type: application/json
+
+{
+  "username": "kayttaja",
+  "password": "salis",
+  "email": "testi@gmail.com"
+}
+
+### POST /media error
+POST http://localhost:3000/api/user
+
+{"jotain": "jotain"}
+
+### DELETE /user/:id
+DELETE http://localhost:3000/api/user/260
+
+### PUT /user/:id
+PUT http://localhost:3000/api/user/260
+content-type: application/json
+
+{
+  "username": "useri"
+}
