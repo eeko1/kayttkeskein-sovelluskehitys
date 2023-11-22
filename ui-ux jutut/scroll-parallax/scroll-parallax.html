@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: goldenrod;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .hero {
+            height: 700px;
+            background-color: aquamarine;
+        }
+        main {
+            background-color: black;
+            margin-top: -5px;
+            padding: 40px;
+            position: relative;
+            z-index: 100;
+        }
+        p {
+            color: white;
+            font-size: 1.5em;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+        .kuva {
+            width: 100%;
+            height: 700px;
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            /* background-attachment: fixed; */
+            background-size: auto;
+            position: fixed;
+        }
+        .kuva1 {
+            background-image: url(./ilu_01.jpg);
+        }
+        .kuva2 {
+            background-image: url(./ilu_02.png);
+            z-index: 10;
+        }
+        .kuva3 {
+            background-image: url(./ilu_03.png);
+            z-index: 11;
+        }
+        .kuva4 {
+            background-image: url(./ilu_04.png);
+            z-index: 15;
+        }
+        .kuva5 {
+            background-image: url(./ilu_05.png);
+        }
+        .kuva6 {
+            background-image: url(./ilu_06.png);
+        }
+        .kuva-fixattu {
+            background-color: black;
+        } 
+        
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="kuva kuva1" data-type="parallax" data-speed="5"></div>
+        <div class="kuva kuva2" data-type="parallax" data-speed="20"></div>
+        <div class="kuva kuva3" data-type="parallax" data-speed="40"></div>
+        <div class="kuva kuva4" data-type="parallax" data-speed="60"></div>
+        <div class="kuva kuva5" data-type="parallax" data-speed="80"></div>
+        <div class="kuva kuva6" data-type="parallax" data-speed="100"></div>
+    </div>
+    <main>
+        <h1>Scroll parallax</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum eveniet cupiditate deleniti minus consequatur rerum non provident, sapiente tempore quam, inventore, fugit architecto est consectetur eos ratione facilis doloremque magnam.</p>
+    </main>
+    <script>
+        window.addEventListener("scroll", function(event){
+
+        var top = this.pageYOffset;
+
+        var layers = document.querySelectorAll('[data-type="parallax"]');
+        var layer, speed, yPos;
+        for (var i = 0; i < layers.length; i++) {
+            layer = layers[i];
+            speed = layer.getAttribute('data-speed');
+            var yPos = -(top * speed / 100);
+            layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+        }
+    });
+    </script>
+</body>
+</html>

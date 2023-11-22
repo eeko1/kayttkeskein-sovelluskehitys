@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Duck hunt</title>
+    <style>
+      
+      html,
+      body {
+        min-height: 100vh;
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      main {
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        color: black;
+        transition: all 1s;
+        transition-timing-function: ease-in-out;
+      }
+
+      h1:hover {
+        transform: skew(20deg);
+        color: pink;
+      }
+
+      #stage {
+        background-color: antiquewhite;
+        width: 800px;
+        height: 480px;
+        background-image: url(./stage.png);
+        background-size: contain;
+        position: relative;
+      }
+
+      #doggo {
+        width: 120px;
+        height: 110px;
+        background-color: antiquewhite;
+        background: url(./sprite.png);
+        position: absolute;
+        left: 0px;
+        bottom: 50px;
+        background-position: 0px 0px;
+        animation: doggowalk 0.5s steps(5) 6, doggomove 3s linear forwards, 
+        doggosniff 0.5s steps(2) 3s 6, doggojump 2s steps(5) 3s;
+      }
+
+      @keyframes doggowalk {
+        from {
+            background-position: 0px 0px;
+        }
+        to {    
+            background-position: -600px 0px;
+        }
+      }
+
+      @keyframes doggomove {
+        0% {
+            left: 0px;
+        }
+        100% {
+            left: 300px;
+        }
+      }
+
+      @keyframes doggosniff {
+        0% {
+            background-position: -360px 0px;
+        }
+        100% {
+            background-position: -600px 0px;
+        }
+      }
+
+      @keyframes doggojump {
+        0% {
+          background-position: 0px -120px;
+        }
+        100% {
+          background-position: -600px -120px;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Duckhunt Stage</h1>
+
+      <p>
+        Duck Hunt is a fantastic arcade game that takes inspiration from the original classic
+        available on Nintendo game systems. You must shoot the moving ducks down with your mouse and
+        see how many points you can score. The hunting is fun and the controls to aim and fire your
+        weapon are simple to master. The graphics are reminiscent of early Nintendo consoles and the
+        gameplay really is fun. Be sure to avoid shooting your faithful dog, and aim your weapon
+        fast!
+      </p>
+
+      <div id="stage">
+        <div id="doggo"></div>
+        <div id="bird1"></div>
+        <div id="bird2"></div>
+      </div>
+      <div id="console">
+        <div class="console" id="bullets"></div>
+        <div class="console" id="hits"></div>
+        <div class="console" id="points"></div>
+      </div>
+      <div id="output"></div>
+    </main>
+  </body>
+</html>
